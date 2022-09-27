@@ -18,12 +18,20 @@ on:
       ]
 
 jobs:
+  consecutiveness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mktcode/consecutive-workflow-action@7e955aee180a0e1a4e7d44c58eed3ff29abfbbad
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   notion_job:
     runs-on: ubuntu-latest
+    needs: [consecutiveness]
     name: Add GitHub Issues to Notion
     steps:
       - name: Add GitHub Issues to Notion
-        uses: instantish/notion-github-action@v1
+        uses: fluxninja/notion-github-action@fn-sept-2022
         with:
           notion-token: ${{ secrets.NOTION_TOKEN }}
           notion-db: ${{ secrets.NOTION_DATABASE }}
