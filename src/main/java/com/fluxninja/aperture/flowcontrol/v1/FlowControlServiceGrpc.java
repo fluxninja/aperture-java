@@ -9,7 +9,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.49.1)",
-    comments = "Source: aperture/flowcontrol/v1/flowcontrol.proto")
+    comments = "Source: api/aperture/flowcontrol/v1/flowcontrol.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FlowControlServiceGrpc {
 
