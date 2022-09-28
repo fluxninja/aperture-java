@@ -24,6 +24,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install pre-commit
+          command: |
+            pip install pre-commit==2.20.0
+      - run:
           name: Generate pre-commit cache key file
           command: |
             cp .pre-commit-config.yaml /tmp/pre-commit-cache-key.txt
