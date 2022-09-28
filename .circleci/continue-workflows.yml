@@ -4,6 +4,9 @@ executors:
   base-cimg-executor:
     docker:
       - image: cimg/base:2021.07
+  python-cimg-executor:
+    docker:
+      - image: cimg/python:3.10.6
   base-machine-executor:
     machine:
       image: ubuntu-2004:202107-02
