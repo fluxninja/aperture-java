@@ -3,7 +3,7 @@ package com.fluxninja.aperture.sdk;
 import java.time.Duration;
 
 public final class Constants {
-    // Library name and version can be used by the user to create a resource that connects to telemetry expoert.
+    // Library name and version can be used by the user to create a resource that connects to telemetry export.
     public static final String LIBRARY_NAME = "aperture-java";
     public static final String LIBRARY_VERSION = "0.1.0";
 
