@@ -5,16 +5,14 @@ plugins {
     id("com.google.protobuf")
 }
 
-group 'com.fluxninja.aperture'
-version '1.0-SNAPSHOT'
+apply(from = "version.gradle.kts")
 
-repositories {
-    mavenCentral()
-    gradlePluginPortal()
+subprojects {
+    group = "com.fluxninja.aperture"
 }
 
 dependencies {
-    implementation platform("io.opentelemetry:opentelemetry-bom-alpha:1.18.0-alpha")
+    implementation(platform("io.opentelemetry:opentelemetry-bom-alpha:1.18.0-alpha"))
     implementation("io.opentelemetry:opentelemetry-exporter-otlp-logs")
     implementation("io.opentelemetry:opentelemetry-sdk-logs")
 
@@ -27,8 +25,4 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
-}
-
-test {
-    useJUnitPlatform()
 }
