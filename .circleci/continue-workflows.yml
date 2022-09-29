@@ -93,13 +93,13 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - gradle-v1-{{ checksum "build.gradle" }}
+            - gradle-v1-{{ checksum "build.gradle.kts" }}
             - gradle-v1-
       - run: gradle dependencies
       - save_cache:
           paths:
             - ~/.gradle
-          key: gradle-v1-{{ checksum "build.gradle" }}
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}
       # run tests!
       - run: gradle build --no-daemon
       - run: gradle test
@@ -112,13 +112,13 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - gradle-v1-{{ checksum "build.gradle" }}
+            - gradle-v1-{{ checksum "build.gradle.kts" }}
             - gradle-v1-
       - run: gradle assemble publishToSonatype
       - save_cache:
           paths:
             - ~/.gradle
-          key: gradle-v1-{{ checksum "build.gradle" }}
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}
 
 
 workflows:
