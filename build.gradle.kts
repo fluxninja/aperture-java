@@ -1,10 +1,12 @@
-import com.google.protobuf.gradle.*
 import java.time.Duration
 
 plugins {
     id("java")
     id("com.google.protobuf")
     id("io.github.gradle-nexus.publish-plugin")
+
+    `maven-publish`
+    signing
 }
 
 apply(from = "version.gradle.kts")
@@ -48,4 +50,66 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+}
+
+// Publishing
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("mavenPublication") {
+            groupId = "com.fluxninja.aperture"
+            artifactId = "aperture-java"
+
+            plugins.withId("java-platform") {
+                from(components["javaPlatform"])
+            }
+            plugins.withId("java-library") {
+                from(components["java"])
+            }
+
+            versionMapping {
+                allVariants {
+                    fromResolutionResult()
+                }
+            }
+
+            pom {
+                name.set("Aperture Java")
+                description.set("Java SDK to connect to FluxNinja Aperture")
+                url.set("https://github.com/fluxninja/aperture-java")
+
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+
+                developers {
+                    developer {
+                        id.set("fluxninja")
+                        name.set("FluxNinja")
+                        url.set("https://github.com/fluxninja")
+                    }
+                }
+
+                scm {
+                    connection.set("scm:git:git@github.com:fluxninja/aperture-java.git")
+                    developerConnection.set("scm:git:git@github.com:fluxninja/aperture-java.git")
+                    url.set("git@github.com:fluxninja/aperture-java.git")
+                }
+            }
+        }
+    }
+}
+
+if (System.getenv("CI") != null) {
+    signing {
+        useInMemoryPgpKeys(System.getenv("GPG_PRIVATE_KEY"), System.getenv("GPG_PASSWORD"))
+        sign(publishing.publications["mavenPublication"])
+    }
 }
