@@ -13,11 +13,11 @@ public final class Constants {
 
     // Label keys.
     public static final String SOURCE_LABEL = "aperture.source";
-    public static final String FEATURE_STATUS_LABEL = "aperture.feature_status";
+    public static final String FEATURE_STATUS_LABEL = "aperture.feature.status";
     public static final String FEATURE_IP_LABEL = "aperture.feature_ip";
     public static final String CHECK_RESPONSE_LABEL = "aperture.check_response";
     public static final String FLOW_START_TIMESTAMP_LABEL = "aperture.flow_start_timestamp";
-    public static final String FLOW_STOP_TIMESTAMP_LABEL = "aperture.flow_stop_timestamp";
+    public static final String FLOW_STOP_TIMESTAMP_LABEL = "aperture.flow_end_timestamp";
     public static final String CHECK_RESPONSE_TIMESTAMP_LABEL = "aperture.check_response_timestamp";
 
     private Constants() {}

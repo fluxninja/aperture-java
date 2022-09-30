@@ -1,15 +1,20 @@
 package com.fluxninja.aperture.sdk;
 
 import com.fluxninja.aperture.flowcontrol.v1.FlowControlServiceGrpc;
-import io.opentelemetry.exporter.otlp.logs.OtlpGrpcLogExporter;
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
+import io.opentelemetry.exporter.logging.LoggingSpanExporter;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
 
 import java.time.Duration;
+
+import static com.fluxninja.aperture.sdk.Constants.LIBRARY_NAME;
 
 /** A builder for configuring an {@link ApertureSDK}. */
 public final class ApertureSDKBuilder {
 
   private FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient;
-  private OtlpGrpcLogExporter logExporter;
+  private OtlpGrpcSpanExporter spanExporter;
   private Duration timeout;
 
   ApertureSDKBuilder() {}
@@ -19,8 +24,8 @@ public final class ApertureSDKBuilder {
     return this;
   }
 
-  public ApertureSDKBuilder setLogger(OtlpGrpcLogExporter logExporter) {
-    this.logExporter = logExporter;
+  public ApertureSDKBuilder setSpanExporter(OtlpGrpcSpanExporter spanExporter) {
+    this.spanExporter = spanExporter;
     return this;
   }
 
@@ -29,16 +34,22 @@ public final class ApertureSDKBuilder {
     return this;
   }
 
+  // CONSTRUCT FROM GRPC CLIENT CONN and timeout duration
   public ApertureSDK build() {
     FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient = this.flowControlClient;
     if (flowControlClient == null) {
       // TODO handle
     }
 
-    OtlpGrpcLogExporter logExporter = this.logExporter;
-    if (logExporter == null) {
+    OtlpGrpcSpanExporter spanExporter = this.spanExporter;
+    if (spanExporter == null) {
       // TODO handle
     }
+
+    var traceProvider = SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    var tracer = traceProvider.tracerBuilder(LIBRARY_NAME).build();
 
     Duration timeout = this.timeout;
     if (timeout == null) {
@@ -47,7 +58,7 @@ public final class ApertureSDKBuilder {
 
     return new ApertureSDK(
             flowControlClient,
-            logExporter,
+            tracer,
             timeout);
   }
 }
