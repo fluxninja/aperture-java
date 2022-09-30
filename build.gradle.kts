@@ -1,12 +1,17 @@
 import java.time.Duration
 
 plugins {
+    id("application")
     id("java")
     id("com.google.protobuf")
     id("io.github.gradle-nexus.publish-plugin")
 
     `maven-publish`
     signing
+}
+
+application {
+    mainClass.set("com.fluxninja.aperture.example.App")
 }
 
 apply(from = "version.gradle.kts")
@@ -42,6 +47,12 @@ dependencies {
     implementation(platform("io.opentelemetry:opentelemetry-bom-alpha:1.18.0-alpha"))
     implementation("io.opentelemetry:opentelemetry-exporter-otlp-logs")
     implementation("io.opentelemetry:opentelemetry-sdk-logs")
+    implementation("io.opentelemetry:opentelemetry-sdk-trace:1.18.0")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp-trace:1.14.0")
+    implementation("io.opentelemetry:opentelemetry-exporter-logging:1.18.0")
+    implementation("com.sparkjava:spark-core:2.9.4")
+    implementation("io.grpc:grpc-all:1.49.1")
+    implementation("org.slf4j:slf4j-simple:2.0.1")
 
     // Workaround for @javax.annotation.Generated
     // see: https://github.com/grpc/grpc-java/issues/3633
