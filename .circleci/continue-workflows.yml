@@ -154,7 +154,8 @@ workflows:
         - equal: [main, << pipeline.git.branch >>]
         - << pipeline.parameters.updated-sdk >>
     jobs:
-      - publish-snapshots
+      - publish-snapshots:
+          context: sonatype
 
   pre-commit:
     jobs:
