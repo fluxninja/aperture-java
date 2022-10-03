@@ -8,17 +8,14 @@ import static com.fluxninja.aperture.sdk.Constants.*;
 public final class Flow {
   private final CheckResponse checkResponse;
   private final Span span;
-  private final String clientIP;
   private boolean ended;
 
   Flow(
     CheckResponse checkResponse,
     Span span,
-    String clientIP,
     boolean ended) {
     this.checkResponse = checkResponse;
     this.span = span;
-    this.clientIP = clientIP;
     this.ended = ended;
   }
 
@@ -43,7 +40,6 @@ public final class Flow {
     String checkResponseJSONBytes = this.checkResponse.toString();
 
     this.span.setAttribute(FEATURE_STATUS_LABEL, statusCode.name())
-            .setAttribute(FEATURE_IP_LABEL, this.clientIP)
             .setAttribute(CHECK_RESPONSE_LABEL, checkResponseJSONBytes)
             .setAttribute(FLOW_STOP_TIMESTAMP_LABEL, Utils.getCurrentEpochNanos());
 

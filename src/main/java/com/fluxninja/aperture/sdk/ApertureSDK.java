@@ -63,15 +63,11 @@ public final class ApertureSDK {
             .withDeadlineAfter(timeout.toNanos(), TimeUnit.NANOSECONDS)
             .check(req);
 
-    // TODO: find a way to get ip from header
-    String ip = "192.168.0.1";
-
     span.setAttribute(CHECK_RESPONSE_TIMESTAMP_LABEL, Utils.getCurrentEpochNanos());
 
     return new Flow(
             res,
             span,
-            ip,
             false
     );
   }
