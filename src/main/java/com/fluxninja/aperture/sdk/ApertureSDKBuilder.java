@@ -1,26 +1,34 @@
 package com.fluxninja.aperture.sdk;
 
 import com.fluxninja.aperture.flowcontrol.v1.FlowControlServiceGrpc;
-import io.opentelemetry.exporter.otlp.logs.OtlpGrpcLogExporter;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 
 import java.time.Duration;
 
+import static com.fluxninja.aperture.sdk.Constants.DEFAULT_RPC_TIMEOUT;
+import static com.fluxninja.aperture.sdk.Constants.LIBRARY_NAME;
+
 /** A builder for configuring an {@link ApertureSDK}. */
 public final class ApertureSDKBuilder {
-
-  private FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient;
-  private OtlpGrpcLogExporter logExporter;
   private Duration timeout;
+  private String host;
+  private int port;
+  private boolean useHttps = false;
 
   ApertureSDKBuilder() {}
 
-  public ApertureSDKBuilder setFlowControlClient(FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient) {
-    this.flowControlClient = flowControlClient;
+  public ApertureSDKBuilder setHost(String host) {
+    this.host = host;
     return this;
   }
 
-  public ApertureSDKBuilder setLogger(OtlpGrpcLogExporter logExporter) {
-    this.logExporter = logExporter;
+  public ApertureSDKBuilder setPort(int port) {
+    this.port = port;
     return this;
   }
 
@@ -29,25 +37,50 @@ public final class ApertureSDKBuilder {
     return this;
   }
 
-  public ApertureSDK build() {
-    FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient = this.flowControlClient;
-    if (flowControlClient == null) {
-      // TODO handle
+  public ApertureSDKBuilder useHttps() {
+    this.useHttps = true;
+    return this;
+  }
+
+  public ApertureSDK build() throws ApertureSDKException {
+    String host = this.host;
+    if (host == null) {
+      throw new ApertureSDKException("host needs to be set");
     }
 
-    OtlpGrpcLogExporter logExporter = this.logExporter;
-    if (logExporter == null) {
-      // TODO handle
+    int port = this.port;
+    if (port == 0) {
+      throw new ApertureSDKException("port needs to be set");
     }
+
+    String protocol = "http";
+    if(this.useHttps) {
+      protocol = "https";
+    }
+
+    String endpoint = String.format("%s://%s:%d/opentelemetry.proto.collector.trace.v1.TraceService/Export", protocol, host, port);
 
     Duration timeout = this.timeout;
     if (timeout == null) {
-      // TODO handle
+      timeout = DEFAULT_RPC_TIMEOUT;
     }
+
+
+    ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
+    FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient = FlowControlServiceGrpc.newBlockingStub(channel);
+
+    // TODO: set more options to exporter if necessary
+    OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
+            .setEndpoint(endpoint)
+            .build();
+    SdkTracerProvider traceProvider = SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    Tracer tracer = traceProvider.tracerBuilder(LIBRARY_NAME).build();
 
     return new ApertureSDK(
             flowControlClient,
-            logExporter,
+            tracer,
             timeout);
   }
 }

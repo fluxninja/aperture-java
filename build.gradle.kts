@@ -1,12 +1,17 @@
 import java.time.Duration
 
 plugins {
+    id("application")
     id("java")
     id("com.google.protobuf")
     id("io.github.gradle-nexus.publish-plugin")
 
     `maven-publish`
     signing
+}
+
+application {
+    mainClass.set("com.fluxninja.aperture.example.App")
 }
 
 apply(from = "version.gradle.kts")
@@ -40,15 +45,21 @@ subprojects {
 
 dependencies {
     implementation(platform("io.opentelemetry:opentelemetry-bom-alpha:1.18.0-alpha"))
-    implementation("io.opentelemetry:opentelemetry-exporter-otlp-logs")
-    implementation("io.opentelemetry:opentelemetry-sdk-logs")
+    implementation("io.opentelemetry:opentelemetry-sdk-trace:1.18.0")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp-trace:1.14.0")
+    implementation("io.opentelemetry:opentelemetry-exporter-logging:1.18.0")
+    implementation("com.sparkjava:spark-core:2.9.4")
+    implementation("io.grpc:grpc-protobuf:1.44.0")
+    implementation("io.grpc:grpc-stub:1.44.0")
+    implementation("org.slf4j:slf4j-simple:2.0.1")
+    implementation("com.google.protobuf:protobuf-java-util:3.21.6")
+
+    runtimeOnly("io.grpc:grpc-netty-shaded:1.49.0")
 
     // Workaround for @javax.annotation.Generated
     // see: https://github.com/grpc/grpc-java/issues/3633
     compileOnly("javax.annotation:javax.annotation-api:1.3.2")
     compileOnly("io.grpc:grpc-api:1.44.0")
-    compileOnly("io.grpc:grpc-protobuf:1.44.0")
-    compileOnly("io.grpc:grpc-stub:1.44.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
