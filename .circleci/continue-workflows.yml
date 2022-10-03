@@ -121,7 +121,6 @@ jobs:
             - ~/.gradle
           key: gradle-v1-{{ checksum "build.gradle.kts" }}
 
-
 workflows:
   version: 2
 
@@ -157,20 +156,6 @@ workflows:
     jobs:
       - publish-release:
           context: sonatype
-
-  publish-release:
-    when:
-      matches:
-        { value: << pipeline.git.tag >>, pattern: "^releases/.*$" }
-    jobs:
-      - publish-release:
-          context: sonatype
-          # both this and workflow's when is needed
-          filters:
-            branches:
-              ignore: /.+/
-            tags:
-              only: /^releases\/.*$/
 
   pre-commit:
     jobs:
