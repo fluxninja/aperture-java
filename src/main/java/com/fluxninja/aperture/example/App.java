@@ -27,7 +27,7 @@ public class App {
             apertureSDK = ApertureSDK.builder()
                     .setHost(agentHost)
                     .setPort(agentPort)
-                    .setDuration(Duration.ofMillis(200))
+                    .setDuration(Duration.ofMillis(1000))
                     .build();
         } catch (ApertureSDKException e) {
             e.printStackTrace();

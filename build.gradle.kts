@@ -52,6 +52,7 @@ dependencies {
     implementation("io.grpc:grpc-protobuf:1.44.0")
     implementation("io.grpc:grpc-stub:1.44.0")
     implementation("org.slf4j:slf4j-simple:2.0.1")
+    implementation("com.google.protobuf:protobuf-java-util:3.21.6")
 
     runtimeOnly("io.grpc:grpc-netty-shaded:1.49.0")
 

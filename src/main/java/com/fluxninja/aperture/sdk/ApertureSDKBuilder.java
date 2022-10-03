@@ -58,7 +58,7 @@ public final class ApertureSDKBuilder {
       protocol = "https";
     }
 
-    String endpoint = String.format("%s://%s:%d/v1/trace", protocol, host, port);
+    String endpoint = String.format("%s://%s:%d/opentelemetry.proto.collector.trace.v1.TraceService/Export", protocol, host, port);
 
     Duration timeout = this.timeout;
     if (timeout == null) {
