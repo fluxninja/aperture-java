@@ -31,7 +31,7 @@ workflows:
           base-revision: << pipeline.git.base_revision >>
           config-path: .circleci/continue-workflows.yml
           mapping: |
-            src/main/java/com/fluxninja/aperture/sdk/.* updated-sdk true
+            (src/main/java/com/fluxninja/aperture/sdk/.*|.*gradle.kts) updated-sdk true
 
   filter-paths-pr:
     when:

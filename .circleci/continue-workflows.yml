@@ -93,16 +93,34 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - gradle-v1-{{ checksum "build.gradle" }}
+            - gradle-v1-{{ checksum "build.gradle.kts" }}
             - gradle-v1-
       - run: gradle dependencies
       - save_cache:
           paths:
             - ~/.gradle
-          key: gradle-v1-{{ checksum "build.gradle" }}
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}
       # run tests!
       - run: gradle build --no-daemon
       - run: gradle test
+
+  publish-snapshots:
+    docker:
+      - image: cimg/openjdk:11.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - gradle-v1-{{ checksum "build.gradle.kts" }}
+            - gradle-v1-
+      # See https://discuss.circleci.com/t/gpg-keys-as-environment-variables/28641
+      - run: GPG_PRIVATE_KEY=$(echo -e ${GPG_PRIVATE_KEY}) gradle assemble publishToSonatype
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}
+
 
 workflows:
   version: 2
@@ -130,6 +148,15 @@ workflows:
       - build-sdk:
           name: Build with OpenJDK 18
           docker-image: cimg/openjdk:18.0
+
+  publish-snapshots:
+    when:
+      and:
+        - equal: [main, << pipeline.git.branch >>]
+        - << pipeline.parameters.updated-sdk >>
+    jobs:
+      - publish-snapshots:
+          context: sonatype
 
   pre-commit:
     jobs:
