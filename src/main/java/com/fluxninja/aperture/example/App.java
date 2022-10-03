@@ -19,13 +19,13 @@ public class App {
     }
 
     public static void main(String[] args) {
-        final String agentHost = "aperture-agent.aperture-system.svc.cluster.local";
-        final int agentPort = 8080;
+        final String agentHost = "aperture-agent.aperture-agent.svc.cluster.local";
+        final int agentPort = 8089;
 
         ApertureSDK apertureSDK;
         try {
             apertureSDK = ApertureSDK.builder()
-                    .setEndpoint(agentHost)
+                    .setHost(agentHost)
                     .setPort(agentPort)
                     .setDuration(Duration.ofMillis(200))
                     .build();

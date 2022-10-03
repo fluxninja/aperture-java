@@ -16,13 +16,13 @@ import static com.fluxninja.aperture.sdk.Constants.LIBRARY_NAME;
 /** A builder for configuring an {@link ApertureSDK}. */
 public final class ApertureSDKBuilder {
   private Duration timeout;
-  private String endpoint;
+  private String host;
   private int port;
 
   ApertureSDKBuilder() {}
 
-  public ApertureSDKBuilder setEndpoint(String endpoint) {
-    this.endpoint = endpoint;
+  public ApertureSDKBuilder setHost(String host) {
+    this.host = host;
     return this;
   }
 
@@ -37,9 +37,9 @@ public final class ApertureSDKBuilder {
   }
 
   public ApertureSDK build() throws ApertureSDKException {
-    String endpoint = this.endpoint;
-    if (endpoint == null) {
-      throw new ApertureSDKException("endpoint needs to be set");
+    String host = this.host;
+    if (host == null) {
+      throw new ApertureSDKException("host needs to be set");
     }
 
     int port = this.port;
@@ -47,13 +47,15 @@ public final class ApertureSDKBuilder {
       throw new ApertureSDKException("port needs to be set");
     }
 
+    String endpoint = String.format("https://%s:%d", host, port);
+
     Duration timeout = this.timeout;
     if (timeout == null) {
       timeout = DEFAULT_RPC_TIMEOUT;
     }
 
 
-    ManagedChannel channel = ManagedChannelBuilder.forAddress(endpoint, port).usePlaintext().build();
+    ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
     FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient = FlowControlServiceGrpc.newBlockingStub(channel);
 
     // TODO: set more options to exporter if necessary
