@@ -1,6 +1,7 @@
 package com.fluxninja.aperture.sdk;
 
 import com.fluxninja.aperture.flowcontrol.v1.CheckResponse;
+import com.google.protobuf.util.JsonFormat;
 import io.opentelemetry.api.trace.Span;
 
 import static com.fluxninja.aperture.sdk.Constants.*;
@@ -36,8 +37,12 @@ public final class Flow {
     }
     this.ended = true;
 
-    // TODO: check result and use .toByteArray() or .toByteString() if wrong
-    String checkResponseJSONBytes = this.checkResponse.toString();
+    String checkResponseJSONBytes;
+    try {
+      checkResponseJSONBytes = JsonFormat.printer().print(this.checkResponse);
+    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      throw new ApertureSDKException(e);
+    }
 
     this.span.setAttribute(FEATURE_STATUS_LABEL, statusCode.name())
             .setAttribute(CHECK_RESPONSE_LABEL, checkResponseJSONBytes)
