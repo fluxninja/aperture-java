@@ -18,6 +18,7 @@ public final class ApertureSDKBuilder {
   private Duration timeout;
   private String host;
   private int port;
+  private boolean useHttps = false;
 
   ApertureSDKBuilder() {}
 
@@ -36,6 +37,11 @@ public final class ApertureSDKBuilder {
     return this;
   }
 
+  public ApertureSDKBuilder useHttps() {
+    this.useHttps = true;
+    return this;
+  }
+
   public ApertureSDK build() throws ApertureSDKException {
     String host = this.host;
     if (host == null) {
@@ -47,7 +53,12 @@ public final class ApertureSDKBuilder {
       throw new ApertureSDKException("port needs to be set");
     }
 
-    String endpoint = String.format("https://%s:%d", host, port);
+    String protocol = "http";
+    if(this.useHttps) {
+      protocol = "https";
+    }
+
+    String endpoint = String.format("%s://%s:%d/v1/trace", protocol, host, port);
 
     Duration timeout = this.timeout;
     if (timeout == null) {
