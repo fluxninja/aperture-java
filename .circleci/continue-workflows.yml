@@ -104,7 +104,7 @@ jobs:
       - run: gradle build --no-daemon
       - run: gradle test
 
-  publish-snapshots:
+  publish-release:
     docker:
       - image: cimg/openjdk:11.0
     working_directory: ~/repo
@@ -149,14 +149,28 @@ workflows:
           name: Build with OpenJDK 18
           docker-image: cimg/openjdk:18.0
 
-  publish-snapshots:
+  publish-snapshot:
     when:
       and:
         - equal: [main, << pipeline.git.branch >>]
         - << pipeline.parameters.updated-sdk >>
     jobs:
-      - publish-snapshots:
+      - publish-release:
           context: sonatype
+
+  publish-release:
+    when:
+      matches:
+        { value: << pipeline.git.tag >>, pattern: "^releases/.*$" }
+    jobs:
+      - publish-release:
+          context: sonatype
+          # both this and workflow's when is needed
+          filters:
+            branches:
+              ignore: /.+/
+            tags:
+              only: /^releases\/.*$/
 
   pre-commit:
     jobs:

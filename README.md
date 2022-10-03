@@ -10,6 +10,9 @@
   <a href="https://dl.circleci.com/status-badge/img/gh/fluxninja/aperture-java/tree/main.svg?style=svg&circle-token=cf4312657fbc2f4833fee89328a3f27ab5f39c10">
     <img alt="Build Status" src="https://img.shields.io/circleci/build/github/fluxninja/aperture-java/main?token=cf4312657fbc2f4833fee89328a3f27ab5f39c10&style=for-the-badge&logo=circleci">
   </a>
+  <a href="https://maven-badges.herokuapp.com/maven-central/com.fluxninja.aperture/aperture-java/">
+    <img alt="Maven Central" src="https://maven-badges.herokuapp.com/maven-central/com.fluxninja.aperture/aperture-java/badge.svg?style=for-the-badge">
+  </a>
 </p>
 
 # Java SDK for FluxNinja Aperture
