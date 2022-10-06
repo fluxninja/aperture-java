@@ -22,11 +22,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        String agentHost = System.getenv("AGENT_HOST");
+        String agentHost = System.getenv("FN_AGENT_HOST");
         if (agentHost == null) {
             agentHost = DEFAULT_AGENT_HOST;
         }
-        String agentPort = System.getenv("AGENT_PORT");
+        String agentPort = System.getenv("FN_AGENT_PORT");
         if (agentPort == null) {
             agentPort = DEFAULT_AGENT_PORT;
         }
@@ -44,7 +44,7 @@ public class App {
         }
 
         App app = new App(apertureSDK);
-        String appPort = System.getenv("APP_PORT");
+        String appPort = System.getenv("FN_APP_PORT");
         if (appPort == null) {
             appPort = DEFAULT_APP_PORT;
         }
