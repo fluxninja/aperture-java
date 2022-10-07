@@ -11,7 +11,6 @@ import com.linecorp.armeria.common.HttpStatus;
 import com.linecorp.armeria.common.RpcRequest;
 import com.linecorp.armeria.common.RpcResponse;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,15 +18,10 @@ public class DecoratingRPCClient extends SimpleDecoratingRpcClient {
     private ApertureSDK apertureSDK;
     private String featureName;
 
-    public DecoratingRPCClient(RpcClient delegate, String agentHost, int agentPort, Duration timeout, String featureName) {
+    public DecoratingRPCClient(RpcClient delegate, ApertureSDK apertureSDK, String featureName) {
         super(delegate);
         try {
-            this.apertureSDK = ApertureSDK
-                    .builder()
-                    .setHost(agentHost)
-                    .setPort(agentPort)
-                    .setDuration(timeout)
-                    .build();
+            this.apertureSDK = apertureSDK;
             this.featureName = featureName;
         } catch (Exception e) {
             e.printStackTrace();
