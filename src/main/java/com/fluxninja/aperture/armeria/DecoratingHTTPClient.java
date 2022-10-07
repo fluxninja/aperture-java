@@ -10,9 +10,7 @@ import com.linecorp.armeria.client.SimpleDecoratingHttpClient;
 import com.linecorp.armeria.common.HttpRequest;
 import com.linecorp.armeria.common.HttpResponse;
 import com.linecorp.armeria.common.HttpStatus;
-import com.linecorp.armeria.server.HttpService;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,15 +18,10 @@ public class DecoratingHTTPClient extends SimpleDecoratingHttpClient {
     private ApertureSDK apertureSDK;
     private String featureName;
 
-    public DecoratingHTTPClient(HttpClient delegate, String agentHost, int agentPort, Duration timeout, String featureName) {
+    public DecoratingHTTPClient(HttpClient delegate, ApertureSDK apertureSDK, String featureName) {
         super(delegate);
         try {
-            this.apertureSDK = ApertureSDK
-                    .builder()
-                    .setHost(agentHost)
-                    .setPort(agentPort)
-                    .setDuration(timeout)
-                    .build();
+            this.apertureSDK = apertureSDK;
             this.featureName = featureName;
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,8 +57,13 @@ public class DecoratingHTTPClient extends SimpleDecoratingHttpClient {
 
     private Map<String, String> labelsFromRequest(HttpRequest req) {
         Map<String, String> labels = new HashMap<>();
-        // TODO
-        labels.put("user", "kenobi");
+        var headers = req.headers();
+        for (var header: headers) {
+            String labelName = String.format("http.request.header.%s", header.getKey());
+            labels.put(labelName, header.getValue());
+        }
+        labels.put("http.method", req.method().toString());
+        labels.put("http.uri", req.uri().toString());
         return labels;
     }
 }

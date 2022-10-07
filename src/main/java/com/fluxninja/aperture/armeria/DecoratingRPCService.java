@@ -14,27 +14,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DecoratingRPCService extends SimpleDecoratingRpcService {
-    private ApertureSDK apertureSDK;
-    private String featureName;
+    private final ApertureSDK apertureSDK;
+    private final String featureName;
 
-    public DecoratingRPCService(RpcService delegate, String agentHost, int agentPort, Duration timeout, String featureName) {
+    public DecoratingRPCService(RpcService delegate, ApertureSDK apertureSDK, String featureName) {
         super(delegate);
-        try {
-            this.apertureSDK = ApertureSDK
-                    .builder()
-                    .setHost(agentHost)
-                    .setPort(agentPort)
-                    .setDuration(timeout)
-                    .build();
-            this.featureName = featureName;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.apertureSDK = apertureSDK;
+        this.featureName = featureName;
     }
 
     @Override
     public RpcResponse serve(ServiceRequestContext ctx, RpcRequest req) {
-        Map<String, String> labels = labelsFromRequest(req);
+        Map<String, String> labels = null;
         Flow flow = this.apertureSDK.startFlow(featureName, labels);
 
         if (flow.accepted()) {
@@ -57,12 +48,5 @@ public class DecoratingRPCService extends SimpleDecoratingRpcService {
             }
             return RpcResponse.of(HttpStatus.BAD_REQUEST);
         }
-    }
-
-    private Map<String, String> labelsFromRequest(RpcRequest req) {
-        Map<String, String> labels = new HashMap<>();
-        // TODO
-        labels.put("user", "kenobi");
-        return labels;
     }
 }
