@@ -1,6 +1,6 @@
 package com.fluxninja.aperture.example;
 
-import com.fluxninja.aperture.armeria.DecoratingHTTPClient;
+import com.fluxninja.aperture.armeria.ApertureHTTPClient;
 import com.fluxninja.aperture.sdk.ApertureSDK;
 import com.fluxninja.aperture.sdk.ApertureSDKException;
 import com.linecorp.armeria.client.Clients;
@@ -12,7 +12,6 @@ public class ArmeriaClient {
     public static void main(String[] args) {
         final String agentHost = "localhost";
         final int agentPort = 8089;
-        final String featureName = "very_awesome_feature";
 
         ApertureSDK apertureSDK;
         try {
@@ -27,7 +26,7 @@ public class ArmeriaClient {
         }
 
         var client = Clients.builder("http://localhost:10101")
-                .decorator(delegate -> new DecoratingHTTPClient(delegate, apertureSDK, featureName))
+                .decorator(delegate -> new ApertureHTTPClient(delegate, apertureSDK))
                 .build(WebClient.class);
 
         var res = client.get("http/base");

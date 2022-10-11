@@ -1,6 +1,6 @@
 package com.fluxninja.aperture.example;
 
-import com.fluxninja.aperture.armeria.DecoratingHTTPService;
+import com.fluxninja.aperture.armeria.ApertureHTTPService;
 import com.fluxninja.aperture.sdk.ApertureSDK;
 import com.fluxninja.aperture.sdk.ApertureSDKException;
 import com.linecorp.armeria.common.HttpRequest;
@@ -22,7 +22,6 @@ public class ArmeriaServer {
     public static void main(String[] args) {
         final String agentHost = "localhost";
         final int agentPort = 8089;
-        final String featureName = "awesome_feature";
 
         ApertureSDK apertureSDK;
         try {
@@ -40,7 +39,7 @@ public class ArmeriaServer {
         serverBuilder.service("/http/base", createHelloHTTPService());
 
         var decoratedService = createHelloHTTPService()
-            .decorate(delegate -> new DecoratingHTTPService(delegate, apertureSDK, featureName));
+            .decorate(delegate -> new ApertureHTTPService(delegate, apertureSDK));
         serverBuilder.service("/http/decorated", decoratedService);
 
         Server server = serverBuilder.build();
