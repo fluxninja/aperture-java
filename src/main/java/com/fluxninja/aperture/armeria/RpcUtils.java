@@ -19,11 +19,14 @@ class RpcUtils {
             e.printStackTrace();
         }
         // TODO: investigate what can be returned in rpcResponse instead of http code
-        return switch (reason) {
-            case REJECT_REASON_RATE_LIMITED -> HttpStatus.TOO_MANY_REQUESTS;
-            case REJECT_REASON_CONCURRENCY_LIMITED -> HttpStatus.SERVICE_UNAVAILABLE;
-            default -> HttpStatus.BAD_REQUEST;
-        };
+        switch (reason) {
+            case REJECT_REASON_RATE_LIMITED:
+                return HttpStatus.TOO_MANY_REQUESTS;
+            case REJECT_REASON_CONCURRENCY_LIMITED:
+                return HttpStatus.SERVICE_UNAVAILABLE;
+            default:
+                return HttpStatus.BAD_REQUEST;
+        }
     }
 
     // TODO: Make it compatible with envoy authz
