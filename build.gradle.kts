@@ -77,12 +77,7 @@ publishing {
             groupId = "com.fluxninja.aperture"
             artifactId = "aperture-java"
 
-            plugins.withId("java-platform") {
-                from(components["javaPlatform"])
-            }
-            plugins.withId("java-library") {
-                from(components["java"])
-            }
+            from(components["java"])
 
             versionMapping {
                 allVariants {
