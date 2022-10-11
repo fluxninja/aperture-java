@@ -14,7 +14,7 @@ import com.linecorp.armeria.common.HttpStatus;
 import java.util.Map;
 
 public class ApertureHTTPClient extends SimpleDecoratingHttpClient {
-    final private ApertureSDK apertureSDK;
+    private final ApertureSDK apertureSDK;
 
     public ApertureHTTPClient(HttpClient delegate, ApertureSDK apertureSDK) {
         super(delegate);
@@ -22,7 +22,7 @@ public class ApertureHTTPClient extends SimpleDecoratingHttpClient {
     }
 
     @Override
-    public HttpResponse execute(ClientRequestContext ctx, HttpRequest req) {
+    public HttpResponse execute(ClientRequestContext ctx, HttpRequest req) throws Exception {
         Map<String, String> labels = HttpUtils.labelsFromRequest(req);
         Flow flow = this.apertureSDK.startFlow("", labels);
 
@@ -42,7 +42,7 @@ public class ApertureHTTPClient extends SimpleDecoratingHttpClient {
                 } catch (ApertureSDKException ae) {
                     ae.printStackTrace();
                 }
-                throw new RuntimeException(e);
+                throw e;
             }
             return res;
         } else {

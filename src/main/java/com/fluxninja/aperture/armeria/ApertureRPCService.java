@@ -22,7 +22,7 @@ public class ApertureRPCService extends SimpleDecoratingRpcService {
     }
 
     @Override
-    public RpcResponse serve(ServiceRequestContext ctx, RpcRequest req) {
+    public RpcResponse serve(ServiceRequestContext ctx, RpcRequest req) throws Exception {
         Map<String, String> labels = RpcUtils.labelsFromRequest(req);
         Flow flow = this.apertureSDK.startFlow("", labels);
 
@@ -34,9 +34,14 @@ public class ApertureRPCService extends SimpleDecoratingRpcService {
             } catch (ApertureSDKException e) {
                 // ending flow failed
                 e.printStackTrace();
-                return RpcResponse.of(HttpStatus.BAD_REQUEST);
+                return RpcResponse.ofFailure(e);
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                try {
+                    flow.end(FlowStatus.Error);
+                } catch (ApertureSDKException ae) {
+                    ae.printStackTrace();
+                }
+                throw e;
             }
             return res;
         } else {

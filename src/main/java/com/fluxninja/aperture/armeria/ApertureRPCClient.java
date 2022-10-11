@@ -14,7 +14,7 @@ import com.linecorp.armeria.common.RpcResponse;
 import java.util.Map;
 
 public class ApertureRPCClient extends SimpleDecoratingRpcClient {
-    final private ApertureSDK apertureSDK;
+    private final ApertureSDK apertureSDK;
 
     public ApertureRPCClient(RpcClient delegate, ApertureSDK apertureSDK) {
         super(delegate);
@@ -36,7 +36,12 @@ public class ApertureRPCClient extends SimpleDecoratingRpcClient {
                 e.printStackTrace();
                 return RpcResponse.ofFailure(e);
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                try {
+                    flow.end(FlowStatus.Error);
+                } catch (ApertureSDKException ae) {
+                    ae.printStackTrace();
+                }
+                throw e;
             }
             return res;
         } else {
