@@ -3,6 +3,7 @@ package com.fluxninja.aperture.sdk;
 import com.fluxninja.aperture.flowcontrol.v1.CheckRequest;
 import com.fluxninja.aperture.flowcontrol.v1.CheckResponse;
 import com.fluxninja.aperture.flowcontrol.v1.FlowControlServiceGrpc;
+import io.grpc.ManagedChannel;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.baggage.BaggageEntry;
 import io.opentelemetry.api.trace.Span;
@@ -22,10 +23,7 @@ public final class ApertureSDK {
   private final Tracer tracer;
   private final Duration timeout;
 
-  ApertureSDK(
-      FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient,
-      Tracer tracer,
-      Duration timeout) {
+  ApertureSDK(FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient, Tracer tracer, Duration timeout) {
     this.flowControlClient = flowControlClient;
     this.tracer = tracer;
     this.timeout = timeout;
@@ -63,7 +61,7 @@ public final class ApertureSDK {
             .withDeadlineAfter(timeout.toNanos(), TimeUnit.NANOSECONDS)
             .check(req);
 
-    span.setAttribute(CHECK_RESPONSE_TIMESTAMP_LABEL, Utils.getCurrentEpochNanos());
+    span.setAttribute(WORKLOAD_START_TIMESTAMP_LABEL, Utils.getCurrentEpochNanos());
 
     return new Flow(
             res,
