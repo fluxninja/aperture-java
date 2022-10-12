@@ -46,7 +46,7 @@ public class ApertureRPCClient extends SimpleDecoratingRpcClient {
             return res;
         } else {
             HttpStatus code = RpcUtils.handleRejectedFlow(flow);
-            return RpcResponse.of(code);
+            return RpcResponse.ofFailure(new Exception(code.toString()));
         }
     }
 }

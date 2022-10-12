@@ -14,7 +14,7 @@ class HttpUtils {
     protected static HttpStatus handleRejectedFlow(Flow flow) {
         CheckResponse.RejectReason reason = flow.checkResponse().getRejectReason();
         try {
-            flow.end(FlowStatus.Error);
+            flow.end(FlowStatus.Unset);
         } catch (ApertureSDKException e) {
             e.printStackTrace();
         }

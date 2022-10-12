@@ -14,11 +14,10 @@ class RpcUtils {
     protected static HttpStatus handleRejectedFlow(Flow flow) {
         CheckResponse.RejectReason reason = flow.checkResponse().getRejectReason();
         try {
-            flow.end(FlowStatus.Error);
+            flow.end(FlowStatus.Unset);
         } catch (ApertureSDKException e) {
             e.printStackTrace();
         }
-        // TODO: investigate what can be returned in rpcResponse instead of http code
         switch (reason) {
             case REJECT_REASON_RATE_LIMITED:
                 return HttpStatus.TOO_MANY_REQUESTS;
