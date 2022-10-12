@@ -13,6 +13,9 @@ import com.linecorp.armeria.common.RpcResponse;
 
 import java.util.Map;
 
+/**
+ * Decorates an {@link RpcClient} to enable flow control using provided {@link ApertureSDK}
+ */
 public class ApertureRPCClient extends SimpleDecoratingRpcClient {
     private final ApertureSDK apertureSDK;
 

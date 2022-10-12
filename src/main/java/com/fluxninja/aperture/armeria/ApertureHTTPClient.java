@@ -13,6 +13,9 @@ import com.linecorp.armeria.common.HttpStatus;
 
 import java.util.Map;
 
+/**
+ * Decorates an {@link HttpClient} to enable flow control using provided {@link ApertureSDK}
+ */
 public class ApertureHTTPClient extends SimpleDecoratingHttpClient {
     private final ApertureSDK apertureSDK;
 
