@@ -69,7 +69,6 @@ public final class ApertureSDKBuilder {
     ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
     FlowControlServiceGrpc.FlowControlServiceBlockingStub flowControlClient = FlowControlServiceGrpc.newBlockingStub(channel);
 
-    // TODO: set more options to exporter if necessary
     OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
             .setEndpoint(endpoint)
             .build();

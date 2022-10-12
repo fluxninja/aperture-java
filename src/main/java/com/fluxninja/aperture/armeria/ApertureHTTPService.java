@@ -34,7 +34,6 @@ public class ApertureHTTPService extends SimpleDecoratingHttpService {
             } catch (ApertureSDKException e) {
                 // ending flow failed
                 e.printStackTrace();
-                // TODO: what should the response be?
                 return HttpResponse.of(HttpStatus.INTERNAL_SERVER_ERROR);
             } catch (Exception e) {
                 try {
