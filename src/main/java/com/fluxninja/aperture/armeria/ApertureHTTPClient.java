@@ -12,9 +12,16 @@ import com.linecorp.armeria.common.HttpResponse;
 import com.linecorp.armeria.common.HttpStatus;
 
 import java.util.Map;
+import java.util.function.Function;
 
 public class ApertureHTTPClient extends SimpleDecoratingHttpClient {
     private final ApertureSDK apertureSDK;
+
+    public static Function<? super HttpClient, ApertureHTTPClient> newDecorator(ApertureSDK apertureSDK) {
+        ApertureHTTPClientBuilder builder = new ApertureHTTPClientBuilder();
+        builder.setApertureSDK(apertureSDK);
+        return builder::build;
+    }
 
     public ApertureHTTPClient(HttpClient delegate, ApertureSDK apertureSDK) {
         super(delegate);

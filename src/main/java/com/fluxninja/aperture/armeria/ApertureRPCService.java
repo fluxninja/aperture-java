@@ -12,9 +12,16 @@ import com.linecorp.armeria.server.ServiceRequestContext;
 import com.linecorp.armeria.server.SimpleDecoratingRpcService;
 
 import java.util.Map;
+import java.util.function.Function;
 
 public class ApertureRPCService extends SimpleDecoratingRpcService {
     private final ApertureSDK apertureSDK;
+
+    public static Function<? super RpcService, ApertureRPCService>  newDecorator(ApertureSDK apertureSDK) {
+        ApertureRPCServiceBuilder builder = new ApertureRPCServiceBuilder();
+        builder.setApertureSDK(apertureSDK);
+        return builder::build;
+    }
 
     public ApertureRPCService(RpcService delegate, ApertureSDK apertureSDK) {
         super(delegate);

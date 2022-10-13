@@ -39,7 +39,7 @@ public class ArmeriaServer {
         serverBuilder.service("/http/base", createHelloHTTPService());
 
         var decoratedService = createHelloHTTPService()
-            .decorate(delegate -> new ApertureHTTPService(delegate, apertureSDK));
+            .decorate(ApertureHTTPService.newDecorator(apertureSDK));
         serverBuilder.service("/http/decorated", decoratedService);
 
         Server server = serverBuilder.build();
