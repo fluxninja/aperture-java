@@ -26,7 +26,7 @@ public class ArmeriaClient {
         }
 
         var client = Clients.builder("http://localhost:10101")
-                .decorator(delegate -> new ApertureHTTPClient(delegate, apertureSDK))
+                .decorator(ApertureHTTPClient.newDecorator(apertureSDK))
                 .build(WebClient.class);
 
         var res = client.get("http/base");
