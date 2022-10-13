@@ -3,6 +3,7 @@ package com.fluxninja.aperture.armeria;
 import com.fluxninja.aperture.sdk.ApertureSDK;
 import com.linecorp.armeria.server.HttpService;
 
+/** A builder for configuring an {@link ApertureHTTPService}. */
 public class ApertureHTTPServiceBuilder {
     ApertureSDK apertureSDK;
     public ApertureHTTPServiceBuilder setApertureSDK(ApertureSDK apertureSDK) {

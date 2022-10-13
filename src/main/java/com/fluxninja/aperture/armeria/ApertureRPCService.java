@@ -14,6 +14,9 @@ import com.linecorp.armeria.server.SimpleDecoratingRpcService;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * Decorates an {@link RpcService} to enable flow control using provided {@link ApertureSDK}
+ */
 public class ApertureRPCService extends SimpleDecoratingRpcService {
     private final ApertureSDK apertureSDK;
 
