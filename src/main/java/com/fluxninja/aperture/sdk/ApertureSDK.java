@@ -43,7 +43,13 @@ public final class ApertureSDK {
     Map<String, String> labels = new HashMap<>();
 
     for (Map.Entry<String, BaggageEntry> entry: Baggage.current().asMap().entrySet()) {
-      String value = URLDecoder.decode(entry.getValue().getValue(), StandardCharsets.UTF_8);
+      String value;
+      try {
+        value = URLDecoder.decode(entry.getValue().getValue(), StandardCharsets.UTF_8.name());
+      } catch (java.io.UnsupportedEncodingException e) {
+        // This should never happen, as `StandardCharsets.UTF_8.name()` is a valid encoding
+        throw new RuntimeException(e);
+      }
       labels.put(entry.getKey(), value);
     }
 

@@ -130,6 +130,9 @@ workflows:
         - << pipeline.parameters.updated-sdk >>
     jobs:
       - build-sdk:
+          name: Build with OpenJDK 8
+          docker-image: cimg/openjdk:8.0
+      - build-sdk:
           name: Build with OpenJDK 11
           docker-image: cimg/openjdk:11.0
       - build-sdk:
