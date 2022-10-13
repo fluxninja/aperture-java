@@ -14,6 +14,9 @@ import com.linecorp.armeria.server.SimpleDecoratingHttpService;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * Decorates an {@link HttpService} to enable flow control using provided {@link ApertureSDK}
+ */
 public class ApertureHTTPService extends SimpleDecoratingHttpService {
     private final ApertureSDK apertureSDK;
 
