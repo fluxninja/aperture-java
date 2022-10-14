@@ -6,6 +6,8 @@ import com.fluxninja.aperture.sdk.Flow;
 import com.fluxninja.aperture.sdk.FlowStatus;
 import com.linecorp.armeria.common.HttpRequest;
 import com.linecorp.armeria.common.HttpStatus;
+import com.linecorp.armeria.common.RequestHeaders;
+import io.netty.util.AsciiString;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,8 +33,8 @@ class HttpUtils {
     // TODO: Make it compatible with envoy authz
     protected static Map<String, String> labelsFromRequest(HttpRequest req) {
         Map<String, String> labels = new HashMap<>();
-        var headers = req.headers();
-        for (var header: headers) {
+        RequestHeaders headers = req.headers();
+        for (Map.Entry<AsciiString, String> header: headers) {
             String headerKey = header.getKey().toString();
             if (headerKey.startsWith(":")) {
                 continue;

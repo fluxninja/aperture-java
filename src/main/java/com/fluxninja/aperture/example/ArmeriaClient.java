@@ -5,6 +5,7 @@ import com.fluxninja.aperture.sdk.ApertureSDK;
 import com.fluxninja.aperture.sdk.ApertureSDKException;
 import com.linecorp.armeria.client.Clients;
 import com.linecorp.armeria.client.WebClient;
+import com.linecorp.armeria.common.HttpResponse;
 
 import java.time.Duration;
 
@@ -25,11 +26,11 @@ public class ArmeriaClient {
             return;
         }
 
-        var client = Clients.builder("http://localhost:10101")
+        WebClient client = Clients.builder("http://localhost:10101")
                 .decorator(ApertureHTTPClient.newDecorator(apertureSDK))
                 .build(WebClient.class);
 
-        var res = client.get("http/base");
+        HttpResponse res = client.get("http/base");
         System.out.println(res);
     }
 
