@@ -102,8 +102,7 @@ public final class FlowControlServiceGrpc {
 
     /**
      * <pre>
-     * Check wraps the given arbitrary resource and matches the given labels
-     * against Flow Control Limiters to makes a decision whether to allow/deny.
+     * Check wraps the given arbitrary resource and matches the given labels against Flow Control Limiters to makes a decision whether to allow/deny.
      * </pre>
      */
     public void check(com.fluxninja.aperture.flowcontrol.v1.CheckRequest request,
@@ -143,8 +142,7 @@ public final class FlowControlServiceGrpc {
 
     /**
      * <pre>
-     * Check wraps the given arbitrary resource and matches the given labels
-     * against Flow Control Limiters to makes a decision whether to allow/deny.
+     * Check wraps the given arbitrary resource and matches the given labels against Flow Control Limiters to makes a decision whether to allow/deny.
      * </pre>
      */
     public void check(com.fluxninja.aperture.flowcontrol.v1.CheckRequest request,
@@ -173,8 +171,7 @@ public final class FlowControlServiceGrpc {
 
     /**
      * <pre>
-     * Check wraps the given arbitrary resource and matches the given labels
-     * against Flow Control Limiters to makes a decision whether to allow/deny.
+     * Check wraps the given arbitrary resource and matches the given labels against Flow Control Limiters to makes a decision whether to allow/deny.
      * </pre>
      */
     public com.fluxninja.aperture.flowcontrol.v1.CheckResponse check(com.fluxninja.aperture.flowcontrol.v1.CheckRequest request) {
@@ -202,8 +199,7 @@ public final class FlowControlServiceGrpc {
 
     /**
      * <pre>
-     * Check wraps the given arbitrary resource and matches the given labels
-     * against Flow Control Limiters to makes a decision whether to allow/deny.
+     * Check wraps the given arbitrary resource and matches the given labels against Flow Control Limiters to makes a decision whether to allow/deny.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.fluxninja.aperture.flowcontrol.v1.CheckResponse> check(

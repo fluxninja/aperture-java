@@ -84,6 +84,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,7 +122,7 @@ private static final long serialVersionUID = 0L;
   public static final int FEATURE_FIELD_NUMBER = 1;
   private volatile java.lang.Object feature_;
   /**
-   * <code>string feature = 1[json_name = "feature"];</code>
+   * <code>string feature = 1 [json_name = "feature"];</code>
    * @return The feature.
    */
   @java.lang.Override
@@ -129,7 +131,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       feature_ = s;
@@ -137,7 +139,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string feature = 1[json_name = "feature"];</code>
+   * <code>string feature = 1 [json_name = "feature"];</code>
    * @return The bytes for feature.
    */
   @java.lang.Override
@@ -145,7 +147,7 @@ private static final long serialVersionUID = 0L;
       getFeatureBytes() {
     java.lang.Object ref = feature_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       feature_ = b;
@@ -161,7 +163,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.fluxninja.aperture.flowcontrol.v1.FlowcontrolProto.internal_static_aperture_flowcontrol_v1_CheckRequest_LabelsEntry_descriptor,
+                com.fluxninja.aperture.flowcontrol.v1.FlowcontrolProto.internal_static_aperture_flowcontrol_v1_CheckRequest_LabelsEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
@@ -182,13 +184,13 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
    */
 
   @java.lang.Override
   public boolean containsLabels(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetLabels().getMap().containsKey(key);
   }
   /**
@@ -200,7 +202,7 @@ private static final long serialVersionUID = 0L;
     return getLabelsMap();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
    */
   @java.lang.Override
 
@@ -208,26 +210,26 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getLabelsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+   * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getLabelsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -250,7 +252,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFeatureBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feature_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, feature_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -268,7 +270,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFeatureBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feature_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, feature_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -595,7 +597,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object feature_ = "";
     /**
-     * <code>string feature = 1[json_name = "feature"];</code>
+     * <code>string feature = 1 [json_name = "feature"];</code>
      * @return The feature.
      */
     public java.lang.String getFeature() {
@@ -611,14 +613,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string feature = 1[json_name = "feature"];</code>
+     * <code>string feature = 1 [json_name = "feature"];</code>
      * @return The bytes for feature.
      */
     public com.google.protobuf.ByteString
         getFeatureBytes() {
       java.lang.Object ref = feature_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         feature_ = b;
@@ -628,7 +630,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string feature = 1[json_name = "feature"];</code>
+     * <code>string feature = 1 [json_name = "feature"];</code>
      * @param value The feature to set.
      * @return This builder for chaining.
      */
@@ -637,23 +639,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       feature_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string feature = 1[json_name = "feature"];</code>
+     * <code>string feature = 1 [json_name = "feature"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFeature() {
-
+      
       feature_ = getDefaultInstance().getFeature();
       onChanged();
       return this;
     }
     /**
-     * <code>string feature = 1[json_name = "feature"];</code>
+     * <code>string feature = 1 [json_name = "feature"];</code>
      * @param value The bytes for feature to set.
      * @return This builder for chaining.
      */
@@ -663,7 +665,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       feature_ = value;
       onChanged();
       return this;
@@ -696,13 +698,13 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
 
     @java.lang.Override
     public boolean containsLabels(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetLabels().getMap().containsKey(key);
     }
     /**
@@ -714,7 +716,7 @@ private static final long serialVersionUID = 0L;
       return getLabelsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
     @java.lang.Override
 
@@ -722,26 +724,26 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getLabelsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getLabelsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -756,12 +758,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
 
     public Builder removeLabels(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableLabels().getMutableMap()
           .remove(key);
       return this;
@@ -775,19 +777,22 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
     public Builder putLabels(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableLabels().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; labels = 2[json_name = "labels"];</code>
+     * <code>map&lt;string, string&gt; labels = 2 [json_name = "labels"];</code>
      */
 
     public Builder putAllLabels(
@@ -848,3 +853,4 @@ private static final long serialVersionUID = 0L;
   }
 
 }
+

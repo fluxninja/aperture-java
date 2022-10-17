@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -268,7 +270,7 @@ private static final long serialVersionUID = 0L;
   public static final int POLICY_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object policyName_;
   /**
-   * <code>string policy_name = 1[json_name = "policyName"];</code>
+   * <code>string policy_name = 1 [json_name = "policyName"];</code>
    * @return The policyName.
    */
   @java.lang.Override
@@ -277,7 +279,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       policyName_ = s;
@@ -285,7 +287,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string policy_name = 1[json_name = "policyName"];</code>
+   * <code>string policy_name = 1 [json_name = "policyName"];</code>
    * @return The bytes for policyName.
    */
   @java.lang.Override
@@ -293,7 +295,7 @@ private static final long serialVersionUID = 0L;
       getPolicyNameBytes() {
     java.lang.Object ref = policyName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       policyName_ = b;
@@ -306,7 +308,7 @@ private static final long serialVersionUID = 0L;
   public static final int POLICY_HASH_FIELD_NUMBER = 2;
   private volatile java.lang.Object policyHash_;
   /**
-   * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+   * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
    * @return The policyHash.
    */
   @java.lang.Override
@@ -315,7 +317,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       policyHash_ = s;
@@ -323,7 +325,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+   * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
    * @return The bytes for policyHash.
    */
   @java.lang.Override
@@ -331,7 +333,7 @@ private static final long serialVersionUID = 0L;
       getPolicyHashBytes() {
     java.lang.Object ref = policyHash_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       policyHash_ = b;
@@ -344,7 +346,7 @@ private static final long serialVersionUID = 0L;
   public static final int CLASSIFIER_INDEX_FIELD_NUMBER = 3;
   private long classifierIndex_;
   /**
-   * <code>int64 classifier_index = 3[json_name = "classifierIndex"];</code>
+   * <code>int64 classifier_index = 3 [json_name = "classifierIndex"];</code>
    * @return The classifierIndex.
    */
   @java.lang.Override
@@ -355,7 +357,7 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_KEY_FIELD_NUMBER = 4;
   private volatile java.lang.Object labelKey_;
   /**
-   * <code>string label_key = 4[json_name = "labelKey"];</code>
+   * <code>string label_key = 4 [json_name = "labelKey"];</code>
    * @return The labelKey.
    */
   @java.lang.Override
@@ -364,7 +366,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       labelKey_ = s;
@@ -372,7 +374,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string label_key = 4[json_name = "labelKey"];</code>
+   * <code>string label_key = 4 [json_name = "labelKey"];</code>
    * @return The bytes for labelKey.
    */
   @java.lang.Override
@@ -380,7 +382,7 @@ private static final long serialVersionUID = 0L;
       getLabelKeyBytes() {
     java.lang.Object ref = labelKey_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       labelKey_ = b;
@@ -393,14 +395,14 @@ private static final long serialVersionUID = 0L;
   public static final int ERROR_FIELD_NUMBER = 5;
   private int error_;
   /**
-   * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+   * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
    * @return The enum numeric value on the wire for error.
    */
   @java.lang.Override public int getErrorValue() {
     return error_;
   }
   /**
-   * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+   * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
    * @return The error.
    */
   @java.lang.Override public com.fluxninja.aperture.flowcontrol.v1.ClassifierInfo.Error getError() {
@@ -423,16 +425,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPolicyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, policyName_);
     }
-    if (!getPolicyHashBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyHash_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, policyHash_);
     }
     if (classifierIndex_ != 0L) {
       output.writeInt64(3, classifierIndex_);
     }
-    if (!getLabelKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, labelKey_);
     }
     if (error_ != com.fluxninja.aperture.flowcontrol.v1.ClassifierInfo.Error.ERROR_NONE.getNumber()) {
@@ -447,17 +449,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPolicyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, policyName_);
     }
-    if (!getPolicyHashBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyHash_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, policyHash_);
     }
     if (classifierIndex_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, classifierIndex_);
     }
-    if (!getLabelKeyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, labelKey_);
     }
     if (error_ != com.fluxninja.aperture.flowcontrol.v1.ClassifierInfo.Error.ERROR_NONE.getNumber()) {
@@ -785,7 +787,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object policyName_ = "";
     /**
-     * <code>string policy_name = 1[json_name = "policyName"];</code>
+     * <code>string policy_name = 1 [json_name = "policyName"];</code>
      * @return The policyName.
      */
     public java.lang.String getPolicyName() {
@@ -801,14 +803,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string policy_name = 1[json_name = "policyName"];</code>
+     * <code>string policy_name = 1 [json_name = "policyName"];</code>
      * @return The bytes for policyName.
      */
     public com.google.protobuf.ByteString
         getPolicyNameBytes() {
       java.lang.Object ref = policyName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         policyName_ = b;
@@ -818,7 +820,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string policy_name = 1[json_name = "policyName"];</code>
+     * <code>string policy_name = 1 [json_name = "policyName"];</code>
      * @param value The policyName to set.
      * @return This builder for chaining.
      */
@@ -827,23 +829,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       policyName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string policy_name = 1[json_name = "policyName"];</code>
+     * <code>string policy_name = 1 [json_name = "policyName"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPolicyName() {
-
+      
       policyName_ = getDefaultInstance().getPolicyName();
       onChanged();
       return this;
     }
     /**
-     * <code>string policy_name = 1[json_name = "policyName"];</code>
+     * <code>string policy_name = 1 [json_name = "policyName"];</code>
      * @param value The bytes for policyName to set.
      * @return This builder for chaining.
      */
@@ -853,7 +855,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       policyName_ = value;
       onChanged();
       return this;
@@ -861,7 +863,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object policyHash_ = "";
     /**
-     * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+     * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
      * @return The policyHash.
      */
     public java.lang.String getPolicyHash() {
@@ -877,14 +879,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+     * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
      * @return The bytes for policyHash.
      */
     public com.google.protobuf.ByteString
         getPolicyHashBytes() {
       java.lang.Object ref = policyHash_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         policyHash_ = b;
@@ -894,7 +896,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+     * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
      * @param value The policyHash to set.
      * @return This builder for chaining.
      */
@@ -903,23 +905,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       policyHash_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+     * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPolicyHash() {
-
+      
       policyHash_ = getDefaultInstance().getPolicyHash();
       onChanged();
       return this;
     }
     /**
-     * <code>string policy_hash = 2[json_name = "policyHash"];</code>
+     * <code>string policy_hash = 2 [json_name = "policyHash"];</code>
      * @param value The bytes for policyHash to set.
      * @return This builder for chaining.
      */
@@ -929,7 +931,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       policyHash_ = value;
       onChanged();
       return this;
@@ -937,7 +939,7 @@ private static final long serialVersionUID = 0L;
 
     private long classifierIndex_ ;
     /**
-     * <code>int64 classifier_index = 3[json_name = "classifierIndex"];</code>
+     * <code>int64 classifier_index = 3 [json_name = "classifierIndex"];</code>
      * @return The classifierIndex.
      */
     @java.lang.Override
@@ -945,22 +947,22 @@ private static final long serialVersionUID = 0L;
       return classifierIndex_;
     }
     /**
-     * <code>int64 classifier_index = 3[json_name = "classifierIndex"];</code>
+     * <code>int64 classifier_index = 3 [json_name = "classifierIndex"];</code>
      * @param value The classifierIndex to set.
      * @return This builder for chaining.
      */
     public Builder setClassifierIndex(long value) {
-
+      
       classifierIndex_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 classifier_index = 3[json_name = "classifierIndex"];</code>
+     * <code>int64 classifier_index = 3 [json_name = "classifierIndex"];</code>
      * @return This builder for chaining.
      */
     public Builder clearClassifierIndex() {
-
+      
       classifierIndex_ = 0L;
       onChanged();
       return this;
@@ -968,7 +970,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object labelKey_ = "";
     /**
-     * <code>string label_key = 4[json_name = "labelKey"];</code>
+     * <code>string label_key = 4 [json_name = "labelKey"];</code>
      * @return The labelKey.
      */
     public java.lang.String getLabelKey() {
@@ -984,14 +986,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string label_key = 4[json_name = "labelKey"];</code>
+     * <code>string label_key = 4 [json_name = "labelKey"];</code>
      * @return The bytes for labelKey.
      */
     public com.google.protobuf.ByteString
         getLabelKeyBytes() {
       java.lang.Object ref = labelKey_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         labelKey_ = b;
@@ -1001,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string label_key = 4[json_name = "labelKey"];</code>
+     * <code>string label_key = 4 [json_name = "labelKey"];</code>
      * @param value The labelKey to set.
      * @return This builder for chaining.
      */
@@ -1010,23 +1012,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       labelKey_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string label_key = 4[json_name = "labelKey"];</code>
+     * <code>string label_key = 4 [json_name = "labelKey"];</code>
      * @return This builder for chaining.
      */
     public Builder clearLabelKey() {
-
+      
       labelKey_ = getDefaultInstance().getLabelKey();
       onChanged();
       return this;
     }
     /**
-     * <code>string label_key = 4[json_name = "labelKey"];</code>
+     * <code>string label_key = 4 [json_name = "labelKey"];</code>
      * @param value The bytes for labelKey to set.
      * @return This builder for chaining.
      */
@@ -1036,7 +1038,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       labelKey_ = value;
       onChanged();
       return this;
@@ -1044,25 +1046,25 @@ private static final long serialVersionUID = 0L;
 
     private int error_ = 0;
     /**
-     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
      * @return The enum numeric value on the wire for error.
      */
     @java.lang.Override public int getErrorValue() {
       return error_;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
      * @param value The enum numeric value on the wire for error to set.
      * @return This builder for chaining.
      */
     public Builder setErrorValue(int value) {
-
+      
       error_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
@@ -1072,7 +1074,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fluxninja.aperture.flowcontrol.v1.ClassifierInfo.Error.UNRECOGNIZED : result;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
      * @param value The error to set.
      * @return This builder for chaining.
      */
@@ -1080,17 +1082,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       error_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5[json_name = "error"];</code>
+     * <code>.aperture.flowcontrol.v1.ClassifierInfo.Error error = 5 [json_name = "error"];</code>
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
+      
       error_ = 0;
       onChanged();
       return this;
@@ -1147,3 +1149,4 @@ private static final long serialVersionUID = 0L;
   }
 
 }
+

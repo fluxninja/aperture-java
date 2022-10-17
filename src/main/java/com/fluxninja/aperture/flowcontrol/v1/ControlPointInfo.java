@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -227,14 +229,14 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
-   * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+   * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override public int getTypeValue() {
     return type_;
   }
   /**
-   * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+   * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
    * @return The type.
    */
   @java.lang.Override public com.fluxninja.aperture.flowcontrol.v1.ControlPointInfo.Type getType() {
@@ -246,7 +248,7 @@ private static final long serialVersionUID = 0L;
   public static final int FEATURE_FIELD_NUMBER = 2;
   private volatile java.lang.Object feature_;
   /**
-   * <code>string feature = 2[json_name = "feature"];</code>
+   * <code>string feature = 2 [json_name = "feature"];</code>
    * @return The feature.
    */
   @java.lang.Override
@@ -255,7 +257,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs =
+      com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       feature_ = s;
@@ -263,7 +265,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string feature = 2[json_name = "feature"];</code>
+   * <code>string feature = 2 [json_name = "feature"];</code>
    * @return The bytes for feature.
    */
   @java.lang.Override
@@ -271,7 +273,7 @@ private static final long serialVersionUID = 0L;
       getFeatureBytes() {
     java.lang.Object ref = feature_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
+      com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       feature_ = b;
@@ -298,7 +300,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.fluxninja.aperture.flowcontrol.v1.ControlPointInfo.Type.TYPE_UNKNOWN.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getFeatureBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feature_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, feature_);
     }
     unknownFields.writeTo(output);
@@ -314,7 +316,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
-    if (!getFeatureBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feature_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, feature_);
     }
     size += unknownFields.getSerializedSize();
@@ -601,25 +603,25 @@ private static final long serialVersionUID = 0L;
 
     private int type_ = 0;
     /**
-     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
+      
       type_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
      * @return The type.
      */
     @java.lang.Override
@@ -629,7 +631,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.fluxninja.aperture.flowcontrol.v1.ControlPointInfo.Type.UNRECOGNIZED : result;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -637,17 +639,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       type_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1[json_name = "type"];</code>
+     * <code>.aperture.flowcontrol.v1.ControlPointInfo.Type type = 1 [json_name = "type"];</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      
       type_ = 0;
       onChanged();
       return this;
@@ -655,7 +657,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object feature_ = "";
     /**
-     * <code>string feature = 2[json_name = "feature"];</code>
+     * <code>string feature = 2 [json_name = "feature"];</code>
      * @return The feature.
      */
     public java.lang.String getFeature() {
@@ -671,14 +673,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string feature = 2[json_name = "feature"];</code>
+     * <code>string feature = 2 [json_name = "feature"];</code>
      * @return The bytes for feature.
      */
     public com.google.protobuf.ByteString
         getFeatureBytes() {
       java.lang.Object ref = feature_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         feature_ = b;
@@ -688,7 +690,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string feature = 2[json_name = "feature"];</code>
+     * <code>string feature = 2 [json_name = "feature"];</code>
      * @param value The feature to set.
      * @return This builder for chaining.
      */
@@ -697,23 +699,23 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-
+  
       feature_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string feature = 2[json_name = "feature"];</code>
+     * <code>string feature = 2 [json_name = "feature"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFeature() {
-
+      
       feature_ = getDefaultInstance().getFeature();
       onChanged();
       return this;
     }
     /**
-     * <code>string feature = 2[json_name = "feature"];</code>
+     * <code>string feature = 2 [json_name = "feature"];</code>
      * @param value The bytes for feature to set.
      * @return This builder for chaining.
      */
@@ -723,7 +725,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+      
       feature_ = value;
       onChanged();
       return this;
@@ -780,3 +782,4 @@ private static final long serialVersionUID = 0L;
   }
 
 }
+

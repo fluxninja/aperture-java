@@ -17,4 +17,5 @@
 
 # Java SDK for FluxNinja Aperture
 
-Java SDK provides an easy way to integrate your Java applications with [FluxNinja Aperture](https://github.com/fluxninja/aperture).
+Java SDK provides an easy way to integrate your Java applications with
+[FluxNinja Aperture](https://github.com/fluxninja/aperture).
