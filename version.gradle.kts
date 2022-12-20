@@ -1,7 +1,7 @@
-val snapshot = true
+val snapshot = false
 
 allprojects {
-  var ver = "0.13.0"
+  var ver = "0.15.0"
   if (snapshot) {
     ver += "-SNAPSHOT"
   }
