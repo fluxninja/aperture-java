@@ -1,4 +1,4 @@
-val snapshot = true
+val snapshot = false
 
 allprojects {
   var ver = "2.22.0"
