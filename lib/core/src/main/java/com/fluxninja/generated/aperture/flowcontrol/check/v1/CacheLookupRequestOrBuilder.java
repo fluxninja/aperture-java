@@ -3,8 +3,8 @@
 
 package com.fluxninja.generated.aperture.flowcontrol.check.v1;
 
-public interface CacheDeleteRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:aperture.flowcontrol.check.v1.CacheDeleteRequest)
+public interface CacheLookupRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:aperture.flowcontrol.check.v1.CacheLookupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,11 +20,19 @@ public interface CacheDeleteRequestOrBuilder extends
       getControlPointBytes();
 
   /**
+   * <pre>
+   * Key for result cache that needs to be fetched.
+   * </pre>
+   *
    * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
    * @return The resultCacheKey.
    */
   java.lang.String getResultCacheKey();
   /**
+   * <pre>
+   * Key for result cache that needs to be fetched.
+   * </pre>
+   *
    * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
    * @return The bytes for resultCacheKey.
    */
@@ -32,23 +40,39 @@ public interface CacheDeleteRequestOrBuilder extends
       getResultCacheKeyBytes();
 
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @return A list containing the stateCacheKeys.
    */
   java.util.List<java.lang.String>
       getStateCacheKeysList();
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @return The count of stateCacheKeys.
    */
   int getStateCacheKeysCount();
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @param index The index of the element to return.
    * @return The stateCacheKeys at the given index.
    */
   java.lang.String getStateCacheKeys(int index);
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the stateCacheKeys at the given index.

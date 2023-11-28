@@ -4,18 +4,18 @@
 package com.fluxninja.generated.aperture.flowcontrol.check.v1;
 
 /**
- * Protobuf type {@code aperture.flowcontrol.check.v1.CacheDeleteRequest}
+ * Protobuf type {@code aperture.flowcontrol.check.v1.CacheLookupRequest}
  */
-public final class CacheDeleteRequest extends
+public final class CacheLookupRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:aperture.flowcontrol.check.v1.CacheDeleteRequest)
-    CacheDeleteRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:aperture.flowcontrol.check.v1.CacheLookupRequest)
+    CacheLookupRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CacheDeleteRequest.newBuilder() to construct.
-  private CacheDeleteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CacheLookupRequest.newBuilder() to construct.
+  private CacheLookupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CacheDeleteRequest() {
+  private CacheLookupRequest() {
     controlPoint_ = "";
     resultCacheKey_ = "";
     stateCacheKeys_ =
@@ -26,20 +26,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CacheDeleteRequest();
+    return new CacheLookupRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheDeleteRequest_descriptor;
+    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheDeleteRequest_fieldAccessorTable
+    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.Builder.class);
+            com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.Builder.class);
   }
 
   public static final int CONTROL_POINT_FIELD_NUMBER = 1;
@@ -85,6 +85,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resultCacheKey_ = "";
   /**
+   * <pre>
+   * Key for result cache that needs to be fetched.
+   * </pre>
+   *
    * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
    * @return The resultCacheKey.
    */
@@ -102,6 +106,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Key for result cache that needs to be fetched.
+   * </pre>
+   *
    * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
    * @return The bytes for resultCacheKey.
    */
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList stateCacheKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @return A list containing the stateCacheKeys.
    */
@@ -133,6 +145,10 @@ private static final long serialVersionUID = 0L;
     return stateCacheKeys_;
   }
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @return The count of stateCacheKeys.
    */
@@ -140,6 +156,10 @@ private static final long serialVersionUID = 0L;
     return stateCacheKeys_.size();
   }
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @param index The index of the element to return.
    * @return The stateCacheKeys at the given index.
@@ -148,6 +168,10 @@ private static final long serialVersionUID = 0L;
     return stateCacheKeys_.get(index);
   }
   /**
+   * <pre>
+   * Keys for state cache entries that need to be fetched.
+   * </pre>
+   *
    * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the stateCacheKeys at the given index.
@@ -213,10 +237,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest)) {
+    if (!(obj instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest)) {
       return super.equals(obj);
     }
-    com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest other = (com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest) obj;
+    com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest other = (com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest) obj;
 
     if (!getControlPoint()
         .equals(other.getControlPoint())) return false;
@@ -248,44 +272,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(byte[] data)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(java.io.InputStream input)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -293,26 +317,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseDelimitedFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -325,7 +349,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest prototype) {
+  public static Builder newBuilder(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -341,26 +365,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code aperture.flowcontrol.check.v1.CacheDeleteRequest}
+   * Protobuf type {@code aperture.flowcontrol.check.v1.CacheLookupRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:aperture.flowcontrol.check.v1.CacheDeleteRequest)
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:aperture.flowcontrol.check.v1.CacheLookupRequest)
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheDeleteRequest_descriptor;
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheDeleteRequest_fieldAccessorTable
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.Builder.class);
+              com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.Builder.class);
     }
 
-    // Construct using com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.newBuilder()
+    // Construct using com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.newBuilder()
     private Builder() {
 
     }
@@ -384,17 +408,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheDeleteRequest_descriptor;
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest getDefaultInstanceForType() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.getDefaultInstance();
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest getDefaultInstanceForType() {
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest build() {
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest result = buildPartial();
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest build() {
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -402,14 +426,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest buildPartial() {
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest result = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest(this);
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest buildPartial() {
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest result = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest result) {
+    private void buildPartial0(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.controlPoint_ = controlPoint_;
@@ -457,16 +481,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest) {
-        return mergeFrom((com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest)other);
+      if (other instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest) {
+        return mergeFrom((com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest other) {
-      if (other == com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest other) {
+      if (other == com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest.getDefaultInstance()) return this;
       if (!other.getControlPoint().isEmpty()) {
         controlPoint_ = other.controlPoint_;
         bitField0_ |= 0x00000001;
@@ -620,6 +644,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resultCacheKey_ = "";
     /**
+     * <pre>
+     * Key for result cache that needs to be fetched.
+     * </pre>
+     *
      * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
      * @return The resultCacheKey.
      */
@@ -636,6 +664,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Key for result cache that needs to be fetched.
+     * </pre>
+     *
      * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
      * @return The bytes for resultCacheKey.
      */
@@ -653,6 +685,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Key for result cache that needs to be fetched.
+     * </pre>
+     *
      * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
      * @param value The resultCacheKey to set.
      * @return This builder for chaining.
@@ -666,6 +702,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Key for result cache that needs to be fetched.
+     * </pre>
+     *
      * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
      * @return This builder for chaining.
      */
@@ -676,6 +716,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Key for result cache that needs to be fetched.
+     * </pre>
+     *
      * <code>string result_cache_key = 2 [json_name = "resultCacheKey"];</code>
      * @param value The bytes for resultCacheKey to set.
      * @return This builder for chaining.
@@ -699,6 +743,10 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000004;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @return A list containing the stateCacheKeys.
      */
@@ -708,6 +756,10 @@ private static final long serialVersionUID = 0L;
       return stateCacheKeys_;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @return The count of stateCacheKeys.
      */
@@ -715,6 +767,10 @@ private static final long serialVersionUID = 0L;
       return stateCacheKeys_.size();
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param index The index of the element to return.
      * @return The stateCacheKeys at the given index.
@@ -723,6 +779,10 @@ private static final long serialVersionUID = 0L;
       return stateCacheKeys_.get(index);
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the stateCacheKeys at the given index.
@@ -732,6 +792,10 @@ private static final long serialVersionUID = 0L;
       return stateCacheKeys_.getByteString(index);
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param index The index to set the value at.
      * @param value The stateCacheKeys to set.
@@ -747,6 +811,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param value The stateCacheKeys to add.
      * @return This builder for chaining.
@@ -761,6 +829,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param values The stateCacheKeys to add.
      * @return This builder for chaining.
@@ -775,6 +847,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @return This builder for chaining.
      */
@@ -786,6 +862,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Keys for state cache entries that need to be fetched.
+     * </pre>
+     *
      * <code>repeated string state_cache_keys = 3 [json_name = "stateCacheKeys"];</code>
      * @param value The bytes of the stateCacheKeys to add.
      * @return This builder for chaining.
@@ -813,23 +893,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:aperture.flowcontrol.check.v1.CacheDeleteRequest)
+    // @@protoc_insertion_point(builder_scope:aperture.flowcontrol.check.v1.CacheLookupRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:aperture.flowcontrol.check.v1.CacheDeleteRequest)
-  private static final com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:aperture.flowcontrol.check.v1.CacheLookupRequest)
+  private static final com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest();
+    DEFAULT_INSTANCE = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest();
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest getDefaultInstance() {
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CacheDeleteRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CacheDeleteRequest>() {
+  private static final com.google.protobuf.Parser<CacheLookupRequest>
+      PARSER = new com.google.protobuf.AbstractParser<CacheLookupRequest>() {
     @java.lang.Override
-    public CacheDeleteRequest parsePartialFrom(
+    public CacheLookupRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -848,17 +928,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<CacheDeleteRequest> parser() {
+  public static com.google.protobuf.Parser<CacheLookupRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CacheDeleteRequest> getParserForType() {
+  public com.google.protobuf.Parser<CacheLookupRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheDeleteRequest getDefaultInstanceForType() {
+  public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

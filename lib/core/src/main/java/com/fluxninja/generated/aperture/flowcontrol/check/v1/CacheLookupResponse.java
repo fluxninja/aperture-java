@@ -4,30 +4,30 @@
 package com.fluxninja.generated.aperture.flowcontrol.check.v1;
 
 /**
- * Protobuf type {@code aperture.flowcontrol.check.v1.CacheUpsertResponse}
+ * Protobuf type {@code aperture.flowcontrol.check.v1.CacheLookupResponse}
  */
-public final class CacheUpsertResponse extends
+public final class CacheLookupResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:aperture.flowcontrol.check.v1.CacheUpsertResponse)
-    CacheUpsertResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:aperture.flowcontrol.check.v1.CacheLookupResponse)
+    CacheLookupResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CacheUpsertResponse.newBuilder() to construct.
-  private CacheUpsertResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CacheLookupResponse.newBuilder() to construct.
+  private CacheLookupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CacheUpsertResponse() {
+  private CacheLookupResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CacheUpsertResponse();
+    return new CacheLookupResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_descriptor;
+    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
@@ -45,16 +45,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_fieldAccessorTable
+    return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.Builder.class);
+            com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int RESULT_CACHE_RESPONSE_FIELD_NUMBER = 1;
-  private com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse resultCacheResponse_;
+  private com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse resultCacheResponse_;
   /**
-   * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+   * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
    * @return Whether the resultCacheResponse field is set.
    */
   @java.lang.Override
@@ -62,37 +62,37 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+   * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
    * @return The resultCacheResponse.
    */
   @java.lang.Override
-  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getResultCacheResponse() {
-    return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance() : resultCacheResponse_;
+  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getResultCacheResponse() {
+    return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance() : resultCacheResponse_;
   }
   /**
-   * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+   * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
    */
   @java.lang.Override
-  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponseOrBuilder getResultCacheResponseOrBuilder() {
-    return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance() : resultCacheResponse_;
+  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponseOrBuilder getResultCacheResponseOrBuilder() {
+    return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance() : resultCacheResponse_;
   }
 
   public static final int STATE_CACHE_RESPONSES_FIELD_NUMBER = 2;
   private static final class StateCacheResponsesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> defaultEntry =
+        java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>newDefaultInstance(
-                com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_StateCacheResponsesEntry_descriptor, 
+            .<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>newDefaultInstance(
+                com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_StateCacheResponsesEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance());
+                com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance());
   }
   @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
-      java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> stateCacheResponses_;
-  private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+      java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> stateCacheResponses_;
+  private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
   internalGetStateCacheResponses() {
     if (stateCacheResponses_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -104,7 +104,7 @@ private static final long serialVersionUID = 0L;
     return internalGetStateCacheResponses().getMap().size();
   }
   /**
-   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
    */
   @java.lang.Override
   public boolean containsStateCacheResponses(
@@ -117,38 +117,38 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> getStateCacheResponses() {
+  public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> getStateCacheResponses() {
     return getStateCacheResponsesMap();
   }
   /**
-   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> getStateCacheResponsesMap() {
+  public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> getStateCacheResponsesMap() {
     return internalGetStateCacheResponses().getMap();
   }
   /**
-   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
    */
   @java.lang.Override
   public /* nullable */
-com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getStateCacheResponsesOrDefault(
+com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getStateCacheResponsesOrDefault(
       java.lang.String key,
       /* nullable */
-com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultValue) {
+com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> map =
+    java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> map =
         internalGetStateCacheResponses().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+   * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
    */
   @java.lang.Override
-  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getStateCacheResponsesOrThrow(
+  public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getStateCacheResponsesOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> map =
+    java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> map =
         internalGetStateCacheResponses().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
@@ -192,9 +192,9 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getResultCacheResponse());
     }
-    for (java.util.Map.Entry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> entry
+    for (java.util.Map.Entry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> entry
          : internalGetStateCacheResponses().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+      com.google.protobuf.MapEntry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
       stateCacheResponses__ = StateCacheResponsesDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -212,10 +212,10 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse)) {
+    if (!(obj instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse)) {
       return super.equals(obj);
     }
-    com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse other = (com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse) obj;
+    com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse other = (com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse) obj;
 
     if (hasResultCacheResponse() != other.hasResultCacheResponse()) return false;
     if (hasResultCacheResponse()) {
@@ -248,44 +248,44 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     return hash;
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(byte[] data)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(java.io.InputStream input)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -293,26 +293,26 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseDelimitedFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse parseFrom(
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -325,7 +325,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse prototype) {
+  public static Builder newBuilder(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -341,15 +341,15 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     return builder;
   }
   /**
-   * Protobuf type {@code aperture.flowcontrol.check.v1.CacheUpsertResponse}
+   * Protobuf type {@code aperture.flowcontrol.check.v1.CacheLookupResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:aperture.flowcontrol.check.v1.CacheUpsertResponse)
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:aperture.flowcontrol.check.v1.CacheLookupResponse)
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_descriptor;
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -377,12 +377,12 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_fieldAccessorTable
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.Builder.class);
+              com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.class, com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.Builder.class);
     }
 
-    // Construct using com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.newBuilder()
+    // Construct using com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -414,17 +414,17 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheUpsertResponse_descriptor;
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CheckProto.internal_static_aperture_flowcontrol_check_v1_CacheLookupResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse getDefaultInstanceForType() {
-      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.getDefaultInstance();
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse getDefaultInstanceForType() {
+      return com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse build() {
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse result = buildPartial();
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse build() {
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -432,14 +432,14 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
 
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse buildPartial() {
-      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse result = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse(this);
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse buildPartial() {
+      com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse result = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse result) {
+    private void buildPartial0(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -489,16 +489,16 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse) {
-        return mergeFrom((com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse)other);
+      if (other instanceof com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse) {
+        return mergeFrom((com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse other) {
-      if (other == com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse other) {
+      if (other == com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse.getDefaultInstance()) return this;
       if (other.hasResultCacheResponse()) {
         mergeResultCacheResponse(other.getResultCacheResponse());
       }
@@ -539,7 +539,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
               break;
             } // case 10
             case 18: {
-              com.google.protobuf.MapEntry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+              com.google.protobuf.MapEntry<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
               stateCacheResponses__ = input.readMessage(
                   StateCacheResponsesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableStateCacheResponses().getMutableMap().put(
@@ -564,31 +564,31 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
     private int bitField0_;
 
-    private com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse resultCacheResponse_;
+    private com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse resultCacheResponse_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponseOrBuilder> resultCacheResponseBuilder_;
+        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponseOrBuilder> resultCacheResponseBuilder_;
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      * @return Whether the resultCacheResponse field is set.
      */
     public boolean hasResultCacheResponse() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      * @return The resultCacheResponse.
      */
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getResultCacheResponse() {
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getResultCacheResponse() {
       if (resultCacheResponseBuilder_ == null) {
-        return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance() : resultCacheResponse_;
+        return resultCacheResponse_ == null ? com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance() : resultCacheResponse_;
       } else {
         return resultCacheResponseBuilder_.getMessage();
       }
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
-    public Builder setResultCacheResponse(com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse value) {
+    public Builder setResultCacheResponse(com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse value) {
       if (resultCacheResponseBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -602,10 +602,10 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
     public Builder setResultCacheResponse(
-        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.Builder builderForValue) {
+        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.Builder builderForValue) {
       if (resultCacheResponseBuilder_ == null) {
         resultCacheResponse_ = builderForValue.build();
       } else {
@@ -616,13 +616,13 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
-    public Builder mergeResultCacheResponse(com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse value) {
+    public Builder mergeResultCacheResponse(com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse value) {
       if (resultCacheResponseBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
           resultCacheResponse_ != null &&
-          resultCacheResponse_ != com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance()) {
+          resultCacheResponse_ != com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance()) {
           getResultCacheResponseBuilder().mergeFrom(value);
         } else {
           resultCacheResponse_ = value;
@@ -637,7 +637,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
     public Builder clearResultCacheResponse() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -650,33 +650,33 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.Builder getResultCacheResponseBuilder() {
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.Builder getResultCacheResponseBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResultCacheResponseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponseOrBuilder getResultCacheResponseOrBuilder() {
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponseOrBuilder getResultCacheResponseOrBuilder() {
       if (resultCacheResponseBuilder_ != null) {
         return resultCacheResponseBuilder_.getMessageOrBuilder();
       } else {
         return resultCacheResponse_ == null ?
-            com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.getDefaultInstance() : resultCacheResponse_;
+            com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.getDefaultInstance() : resultCacheResponse_;
       }
     }
     /**
-     * <code>.aperture.flowcontrol.check.v1.KeyUpsertResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
+     * <code>.aperture.flowcontrol.check.v1.KeyLookupResponse result_cache_response = 1 [json_name = "resultCacheResponse"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponseOrBuilder> 
+        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponseOrBuilder> 
         getResultCacheResponseFieldBuilder() {
       if (resultCacheResponseBuilder_ == null) {
         resultCacheResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponseOrBuilder>(
+            com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse.Builder, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponseOrBuilder>(
                 getResultCacheResponse(),
                 getParentForChildren(),
                 isClean());
@@ -686,8 +686,8 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> stateCacheResponses_;
-    private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+        java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> stateCacheResponses_;
+    private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
         internalGetStateCacheResponses() {
       if (stateCacheResponses_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -695,7 +695,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       }
       return stateCacheResponses_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+    private com.google.protobuf.MapField<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
         internalGetMutableStateCacheResponses() {
       if (stateCacheResponses_ == null) {
         stateCacheResponses_ = com.google.protobuf.MapField.newMapField(
@@ -712,7 +712,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return internalGetStateCacheResponses().getMap().size();
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     @java.lang.Override
     public boolean containsStateCacheResponses(
@@ -725,38 +725,38 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> getStateCacheResponses() {
+    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> getStateCacheResponses() {
       return getStateCacheResponsesMap();
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> getStateCacheResponsesMap() {
+    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> getStateCacheResponsesMap() {
       return internalGetStateCacheResponses().getMap();
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     @java.lang.Override
     public /* nullable */
-com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getStateCacheResponsesOrDefault(
+com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getStateCacheResponsesOrDefault(
         java.lang.String key,
         /* nullable */
-com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultValue) {
+com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> map =
+      java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> map =
           internalGetStateCacheResponses().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     @java.lang.Override
-    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse getStateCacheResponsesOrThrow(
+    public com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse getStateCacheResponsesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> map =
+      java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> map =
           internalGetStateCacheResponses().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -770,7 +770,7 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     public Builder removeStateCacheResponses(
         java.lang.String key) {
@@ -783,17 +783,17 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse>
+    public java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse>
         getMutableStateCacheResponses() {
       bitField0_ |= 0x00000002;
       return internalGetMutableStateCacheResponses().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     public Builder putStateCacheResponses(
         java.lang.String key,
-        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse value) {
+        com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse value) {
       if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableStateCacheResponses().getMutableMap()
@@ -802,10 +802,10 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
       return this;
     }
     /**
-     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyUpsertResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
+     * <code>map&lt;string, .aperture.flowcontrol.check.v1.KeyLookupResponse&gt; state_cache_responses = 2 [json_name = "stateCacheResponses"];</code>
      */
     public Builder putAllStateCacheResponses(
-        java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse> values) {
+        java.util.Map<java.lang.String, com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyLookupResponse> values) {
       internalGetMutableStateCacheResponses().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000002;
@@ -824,23 +824,23 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
 
 
-    // @@protoc_insertion_point(builder_scope:aperture.flowcontrol.check.v1.CacheUpsertResponse)
+    // @@protoc_insertion_point(builder_scope:aperture.flowcontrol.check.v1.CacheLookupResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:aperture.flowcontrol.check.v1.CacheUpsertResponse)
-  private static final com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:aperture.flowcontrol.check.v1.CacheLookupResponse)
+  private static final com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse();
+    DEFAULT_INSTANCE = new com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse();
   }
 
-  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse getDefaultInstance() {
+  public static com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CacheUpsertResponse>
-      PARSER = new com.google.protobuf.AbstractParser<CacheUpsertResponse>() {
+  private static final com.google.protobuf.Parser<CacheLookupResponse>
+      PARSER = new com.google.protobuf.AbstractParser<CacheLookupResponse>() {
     @java.lang.Override
-    public CacheUpsertResponse parsePartialFrom(
+    public CacheLookupResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -859,17 +859,17 @@ com.fluxninja.generated.aperture.flowcontrol.check.v1.KeyUpsertResponse defaultV
     }
   };
 
-  public static com.google.protobuf.Parser<CacheUpsertResponse> parser() {
+  public static com.google.protobuf.Parser<CacheLookupResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CacheUpsertResponse> getParserForType() {
+  public com.google.protobuf.Parser<CacheLookupResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheUpsertResponse getDefaultInstanceForType() {
+  public com.fluxninja.generated.aperture.flowcontrol.check.v1.CacheLookupResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
